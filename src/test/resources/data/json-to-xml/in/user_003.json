@@ -1,0 +1,10 @@
+{
+  "id": "3",
+  "birthday": "1985-03-03",
+  "firstName": "Petr3",
+  "lastName": "Petrov3",
+  "password": "testUser_3",
+  "role": "User",
+  "login": "testUser_3",
+  "email": "testUser_3@gmail.com"
+}

@@ -1,0 +1,13 @@
+<user>
+    <id>3</id>
+    <login>testUser_3</login>
+    <password>testUser_3</password>
+    <email>testUser_3@gmail.com</email>
+    <firstName>Petr3</firstName>
+    <lastName>Petrov3</lastName>
+    <birthday>1985-03-03</birthday>
+    <role>
+        <id>2</id>
+        <name>User</name>
+    </role>
+</user>

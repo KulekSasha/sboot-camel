@@ -1,0 +1,24 @@
+Configuration:
+  name: Default
+
+  Properties:
+    Property:
+      name: log-path
+      value: "logs"
+    Property:
+      name: pattern-test
+      value: "[%-5level] %d{HH:mm:ss.SSS} [%t] %c{10}:%L - %msg%n"
+
+  Appenders:
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: ${pattern-test}
+
+  Loggers:
+    Root:
+#      level: debug
+      level: info
+      AppenderRef:
+        - ref: Console_Appender
