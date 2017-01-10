@@ -1,14 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<user>
-    <birthday>1985-03-03</birthday>
-    <email>testUser_3@gmail.com</email>
-    <firstName>Petr3</firstName>
-    <id>3</id>
-    <lastName>Petrov3</lastName>
-    <login>testUser_3</login>
-    <password>testUser_3</password>
-    <role>
-        <id>2</id>
-        <name>User</name>
-    </role>
-</user>
+<user><birthday>1985-03-03</birthday><email>testUser_3@gmail.com</email><firstName>Petr3</firstName><id>3</id><lastName>Petrov3</lastName><login>testUser_3</login><password>testUser_3</password><role><id>2</id><name>User</name></role></user>

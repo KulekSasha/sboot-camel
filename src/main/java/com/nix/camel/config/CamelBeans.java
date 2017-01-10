@@ -2,8 +2,6 @@ package com.nix.camel.config;
 
 import com.nix.model.Role;
 import com.nix.model.User;
-import com.nix.service.FakeRoleService;
-import com.nix.service.FakeRoleServiceImpl;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.basic.DateConverter;
 import net.minidev.json.parser.JSONParser;
@@ -38,10 +36,4 @@ public class CamelBeans {
 
         return xStream;
     }
-
-//    @Bean
-//    public FakeRoleService roleService(){
-//        return new FakeRoleServiceImpl();
-//    }
-
 }

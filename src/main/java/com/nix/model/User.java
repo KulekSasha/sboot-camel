@@ -1,14 +1,9 @@
 package com.nix.model;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-//import com.nix.api.rest.json.JsonDate;
-import com.thoughtworks.xstream.annotations.XStreamAlias;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.NaturalId;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
@@ -47,7 +42,6 @@ public class User {
     @Email(regexp = "^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", message = "{user.email.pattern}")
     private String email;
 
-
     @Column(name = "FIRST_NAME")
     @Length(min = 2, max = 25, message = "{user.firstName.length}")
     private String firstName;
@@ -60,8 +54,6 @@ public class User {
     @Temporal(TemporalType.DATE)
     @Past(message = "{user.birthday.past}")
     @NotNull(message = "{user.birthday.past}")
-//    @JsonDeserialize(using = JsonDate.Deserializer.class)
-//    @JsonSerialize(using = JsonDate.Serializer.class)
     private Date birthday;
 
     @ManyToOne

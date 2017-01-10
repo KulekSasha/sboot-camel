@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class JsonToXmlRouter extends RouteBuilder {
+public class JsonToXmlRoute extends RouteBuilder {
 
     private static final String ROUTE_ID = "json-to-xml";
 
@@ -21,7 +21,12 @@ public class JsonToXmlRouter extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("file:{{json.to.xml.from}}?noop=true&delay=2000").routeId(ROUTE_ID)
+
+        onException(Throwable.class)
+                .handled(true)
+                .to("log:" + ROUTE_ID + "?level=ERROR&showAll=true");
+
+        from("file:{{json.to.xml.in}}?noop=true&delay=2000").routeId(ROUTE_ID)
                 .process(ex -> {
                     JSONObject jsonObject =
                             (JSONObject) jsonParser.parse(ex.getIn().getBody(String.class));
@@ -37,17 +42,11 @@ public class JsonToXmlRouter extends RouteBuilder {
                             });
 
                     ex.getIn().setBody(jsonObject.toString());
-                })
+                }).id("role-enricher")
                 .unmarshal("xmlJsonDataFormat")
-                .to("file:{{json.to.xml.to}}?fileName=${file:name.noext}.xml")
+                .to("file:{{json.to.xml.out}}?fileName=${file:name.noext}.xml")
                 .unmarshal().xstream()
-//                .to("jpa:" + User.class.getCanonicalName());
                 .to("jpa:com.nix.User");
-
-//                .process(ex -> {
-//                    System.out.println(ex.getIn().getBody());
-//                });
-
     }
 
 }

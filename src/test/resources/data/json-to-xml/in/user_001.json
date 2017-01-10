@@ -1,10 +1,10 @@
 {
-  "birthday": "1986-01-01",
-  "firstName": "Ivan",
-  "lastName": "Ivanov",
-  "password": "testUser_1",
-  "role": "Admin",
   "id": "1",
   "login": "testUser_1",
-  "email": "testUser_1@gmail.com"
+  "password": "testUser_1",
+  "email": "testUser_1@gmail.com",
+  "firstName": "Ivan",
+  "lastName": "Ivanov",
+  "birthday": "1986-01-01",
+  "role": "Admin"
 }
