@@ -30,7 +30,7 @@ public class User {
     @Column(name = "PERSON_ID")
     private long id;
 
-    @Column(name = "LOGIN", unique = true)
+    @Column(name = "LOGIN")
     @Pattern(regexp = "^[a-zA-Z0-9_-]{2,10}$", message = "{user.login.pattern}")
     private String login;
 
